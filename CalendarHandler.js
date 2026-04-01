@@ -207,9 +207,11 @@ function getSchoolYear(month){
  * @param {Array<any>} daysOff 
  */
 function populateSheet(daysOff, startDate, endDate){
-  var sheet = ss.getSheetByName("CalendarHandler");
-  if(!sheet) sheet = ss.insertSheet("CalendarHandler")
+  const sheetName = "Info"
+  var sheet = ss.getSheetByName(sheetName);
+  if(!sheet) sheet = ss.insertSheet(sheetName);
 
+  sheet.hideSheet();
   sheet.clearContents();
 
   sheet.getRange("A1").setValue("No-School Days");
